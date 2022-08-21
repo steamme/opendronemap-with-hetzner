@@ -1,0 +1,11 @@
+#cloud-config
+packages:
+  - git
+  - docker
+  - docker-compose
+  - python
+  - pip
+package_update: true
+package_upgrade: true
+runcmd:
+- docker run -p 3000:3000 opendronemap/nodeodm
