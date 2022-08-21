@@ -1,15 +1,18 @@
 #cloud-config
 packages:
+  - git
   - docker
   - docker-compose
+  - python
+  - pip
   - telnet
 package_update: true
 package_upgrade: true
 runcmd:
 - docker run -d --rm -ti -p 3000:3000 -p 8080:8080 opendronemap/clusterodm
 - telnet localhost 8080
-- NODE ADD node1 3000
-- NODE ADD node2 3000
-- NODE ADD node3 3000
-- NODE ADD node4 3000
-- NODE ADD node5 3000
+- NODE ADD 172.19.100.2 3000
+- NODE ADD 172.19.100.3 3000
+- NODE ADD 172.19.100.4 3000
+- NODE ADD 172.19.100.5 3000
+- NODE ADD 172.19.100.6 3000
