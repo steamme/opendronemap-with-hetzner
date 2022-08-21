@@ -6,7 +6,7 @@ packages:
 package_update: true
 package_upgrade: true
 runcmd:
-- docker run --rm -ti -p 3000:3000 -p 8080:8080 opendronemap/clusterodm
+- docker run -d --rm -ti -p 3000:3000 -p 8080:8080 opendronemap/clusterodm
 - telnet localhost 8080
 - NODE ADD node1 3000
 - NODE ADD node2 3000
